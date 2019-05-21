@@ -1,0 +1,26 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.0.BUILD-SNAPSHOT'
+    id 'java'
+}
+
+group 'com.xyz'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+apply plugin: 'io.spring.dependency-management'
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.spring.io/snapshot' }
+    maven { url 'https://repo.spring.io/milestone' }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+
+    implementation 'org.springframework.cloud:spring-cloud-config-client:2.1.2.RELEASE'
+    implementation 'org.springframework.boot:spring-boot-starter-actuator:2.1.2.RELEASE'
+    implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp:2.1.1.RELEASE'
+    implementation 'org.springframework.integration:spring-integration-core:5.1.4.RELEASE'
+}

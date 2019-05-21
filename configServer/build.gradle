@@ -1,0 +1,67 @@
+plugins {
+    id 'org.springframework.boot' version '2.2.0.BUILD-SNAPSHOT'
+    id 'java'
+}
+
+group 'com.xyz'
+version '1.0-SNAPSHOT'
+
+jar {
+    version = '0.0.1'
+    manifest {
+        attributes "Manifest-Version": 1.0,
+                'Main-Class': 'com.xyz.ConfigServerApplication'
+    }
+}
+
+sourceCompatibility = 1.8
+
+apply plugin: 'idea'
+apply plugin: 'java'
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'maven'
+
+
+
+task writeNewPom {
+    doLast {
+        pom {
+            project {
+                inceptionYear '2008'
+                licenses {
+                    license {
+                        name 'The Apache Software License, Version 2.0'
+                        url 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+                        distribution 'repo'
+                    }
+                }
+            }
+        }.writeTo("$buildDir/newpom.xml")
+    }
+}
+
+
+
+tasks.withType(JavaCompile) {
+    options.encoding = "UTF-8"
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://repo.spring.io/snapshot' }
+    maven { url 'https://repo.spring.io/milestone' }
+}
+ext {
+    springCloudVersion = 'Greenwich.RELEASE'
+}
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
+}
+
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-config-server'
+    implementation 'org.springframework.cloud:spring-cloud-starter-bus-amqp'
+    implementation 'org.springframework.integration:spring-integration-core:5.1.4.RELEASE'
+}
