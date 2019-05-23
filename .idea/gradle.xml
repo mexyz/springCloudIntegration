@@ -13,6 +13,7 @@
             <option value="$PROJECT_DIR$/configServer" />
             <option value="$PROJECT_DIR$/eurekaClient" />
             <option value="$PROJECT_DIR$/eurekaServer" />
+            <option value="$PROJECT_DIR$/gateway" />
           </set>
         </option>
         <option name="useQualifiedModuleNames" value="true" />
