@@ -18,5 +18,4 @@ include 'eurekaServer'
 include 'eurekaClient'
 include 'base'
 include 'gateway'
-include 'core'
 

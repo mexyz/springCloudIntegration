@@ -3,15 +3,13 @@ server:
 spring:
   application:
     name: base
-ribbon:
-  eureka:
-    enabled: false
 eureka:
   instance:
     hostname: localhost
   client:
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:7001/eureka/
-service-sayHello:
+      defaultZone: http://127.0.0.1:7001/eureka/
+eureka-client:
   ribbon:
-    listOfServers: http://${eureka.instance.hostname}:8001
+    #NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
+    listOfServers: 127.0.0.1:8001

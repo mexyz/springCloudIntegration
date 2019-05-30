@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import javax.annotation.Resource;
-
 @RestController
 @RefreshScope
 public class DemoController {
@@ -27,7 +25,7 @@ public class DemoController {
 
     @RequestMapping(value = "/feign-consumer", method = RequestMethod.GET)
     public String helloConsumer(){
-        System.out.println(helloService.sayHello());
-        return  helloService.sayHello();
+        helloService.sayHello();
+        return "";
     }
 }
