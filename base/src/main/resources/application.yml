@@ -3,13 +3,18 @@ server:
 spring:
   application:
     name: base
-eureka:
-  instance:
-    hostname: localhost
-  client:
-    serviceUrl:
-      defaultZone: http://127.0.0.1:7001/eureka/
-eureka-client:
-  ribbon:
-    #NIWSServerListClassName: com.netflix.loadbalancer.ConfigurationBasedServerList
-    listOfServers: 127.0.0.1:8001
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+       register: false
+#eureka:
+#  instance:
+#    hostname: localhost
+#  client:
+#    serviceUrl:
+#      defaultZone: http://127.0.0.1:7001/eureka/
+#eureka-client:
+#  ribbon:
+#    listOfServers: 127.0.0.1:8001

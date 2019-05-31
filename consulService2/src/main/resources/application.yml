@@ -1,0 +1,15 @@
+server:
+  port: 8002
+spring:
+  cloud:
+    consul:
+      host: 127.0.0.1
+      port: 8500
+      discovery:
+        register: true
+        serviceName: ${spring.application.name}
+        healthCheckPath: /actuator/health
+        healthCheckInterval: 15s
+        tags: urlprefix-/${spring.application.name}
+        ip-address: true
+        instance-id: ${spring.application.name}:${spring.cloud.client.ipaddress}:${spring.application.instance_id:${server.port}}

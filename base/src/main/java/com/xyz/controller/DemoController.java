@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RefreshScope
+//@RefreshScope
 public class DemoController {
 
-    @Value("${config.name}")
+    @Value("${config.name:}")
     String name = "World";
 
     @RequestMapping("/")

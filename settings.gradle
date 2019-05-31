@@ -18,4 +18,6 @@ include 'eurekaServer'
 include 'eurekaClient'
 include 'base'
 include 'gateway'
+include 'consulService1'
+include 'consulService2'
 
