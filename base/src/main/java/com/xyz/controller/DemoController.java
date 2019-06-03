@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.Map;
+
 @RestController
 //@RefreshScope
 public class DemoController {
@@ -24,8 +26,7 @@ public class DemoController {
     private HelloService helloService;
 
     @RequestMapping(value = "/feign-consumer", method = RequestMethod.GET)
-    public String helloConsumer(){
-        helloService.sayHello();
-        return "";
+    public Map<String, String> helloConsumer(){
+        return helloService.sayHello();
     }
 }

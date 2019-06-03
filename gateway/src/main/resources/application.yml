@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: gateway_test
+        uri: http://127.0.0.1:8088
+        predicates:
+        - Path=/feign-consumer
+#logging:
+#  level:
+#    org.springframework.cloud.gateway: TRACE
+#    org.springframework.http.server.reactive: DEBUG
+#    org.springframework.web.reactive: DEBUG
+#    reactor.ipc.netty: DEBUG
