@@ -2,7 +2,7 @@ spring:
   rabbitmq:
     username: admin
     password: admin
-    host: 192.168.164.129
+    host: 192.168.164.132
     port: 5672
   cloud:
     bus:

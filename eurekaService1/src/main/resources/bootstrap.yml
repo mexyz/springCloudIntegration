@@ -1,6 +1,6 @@
 spring:
   application:
-    name: eureka-client
+    name: eureka-service
   rabbitmq:
     username: admin
     password: admin

@@ -1,8 +1,8 @@
 spring:
   application:
-    name: gateway
+    name: eureka-service
   rabbitmq:
     username: admin
     password: admin
-    host: 192.168.164.132
+    host: 192.168.164.129
     port: 5672

@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.Map;
 
-@FeignClient("consul-client")
+@FeignClient(name = "consul-client", fallback = HelloServiceHystrix.class)
 public interface HelloService {
 
     @RequestMapping(method = RequestMethod.GET, value = "/hello")
