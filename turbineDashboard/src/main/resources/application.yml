@@ -1,9 +1,9 @@
 server:
-  port: 7000
+  port: 7000 #http://127.0.0.1:7000/hystrix
 turbine:
    aggregator:
      clusterConfig: default
-   appConfig: consul-client
+   appConfig: consul-client1,consul-client2
    clusterNameExpression: new String('default')
 management:
   endpoints:
