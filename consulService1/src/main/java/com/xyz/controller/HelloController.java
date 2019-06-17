@@ -24,4 +24,11 @@ public class HelloController {
     public Map<String, String> returnFromService2() {
         return consulService2.returnFromService2();
     }
+
+    @RequestMapping(method = RequestMethod.GET, value = "/returnFromService1")
+    public Map<String, String> hello2() {
+        Map<String, String> map = new HashMap<>();
+        map.put("text", "returnFromService1");
+        return map;
+    }
 }
