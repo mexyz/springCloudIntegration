@@ -1,8 +1,8 @@
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation "org.springframework.boot:spring-boot-starter-web"
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.cloud:spring-cloud-starter-consul-discovery'
+    implementation 'org.springframework.cloud:spring-cloud-netflix-turbine'
     implementation 'org.springframework.cloud:spring-cloud-starter-hystrix:1.4.7.RELEASE'
-    implementation 'org.springframework.cloud:spring-cloud-starter-feign:1.4.6.RELEASE'
+    implementation 'org.springframework.cloud:spring-cloud-starter-hystrix-dashboard:1.4.7.RELEASE'
 }
-

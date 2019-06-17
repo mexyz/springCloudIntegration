@@ -1,13 +1,16 @@
 server:
-  port: 8001
+  port: 7000
+turbine:
+   aggregator:
+     clusterConfig: default
+   appConfig: consul-client
+   clusterNameExpression: new String('default')
 management:
   endpoints:
     web:
       exposure:
         include: '*'
-feign:
-  hystrix:
-    enabled: true
+
 spring:
   cloud:
     consul:
