@@ -21,3 +21,8 @@ spring:
         tags: urlprefix-/${spring.application.name}
         ip-address: true
         instance-id: ${spring.application.name}:${spring.cloud.client.ipaddress}:${spring.application.instance_id:${server.port}}
+  zipkin:
+    base-url: http://192.168.164.132:9411
+  sleuth:
+    sampler:
+      percentage: 1.0 #0.1-1.0 也就是代表链路跟踪的数据上传的概率有多大
