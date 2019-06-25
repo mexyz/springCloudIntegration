@@ -8,6 +8,11 @@ spring:
         uri: http://127.0.0.1:8088
         predicates:
         - Path=/feign-consumer
+        filters:
+          - name: Hystrix
+            args:
+              name: fallbackcmd
+              fallbackUri: forward:/fallback
 #logging:
 #  level:
 #    org.springframework.cloud.gateway: TRACE
