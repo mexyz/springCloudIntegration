@@ -13,6 +13,15 @@ spring:
             args:
               name: fallbackcmd
               fallbackUri: forward:/fallback
+          - name: RequestRateLimiter
+            args:
+              key-resolver: '#{@remoteAddrKeyResolver}' # 使用SpEL名称引用Bean，与上面新建的RateLimiterConfig类中的bean的name相同
+              redis-rate-limiter.replenishRate: 20 # 每秒最大访问次数
+              redis-rate-limiter.burstCapacity: 20 # 令牌桶最大容量
+  redis:
+    host: 192.168.164.132
+    port: 6379
+
 #logging:
 #  level:
 #    org.springframework.cloud.gateway: TRACE
